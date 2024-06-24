@@ -328,7 +328,7 @@ do
     utility.short_keybind_names = {["MouseButton1"] = "MB1", ["MouseButton2"] = "MB2", ["MouseButton3"] = "MB3", ["Insert"] = "INS", ["LeftAlt"] = "LALT", ["LeftControl"] = "LC", ["LeftShift"] = "LS", ["RightAlt"] = "RALT", ["RightControl"] = "RC", ["RightShift"] = "RS", ["CapsLock"] = "CAPS", ["Return"] = "RET", ["Backspace"] = "BSP"}
 end
 
-function library.New(self, info, theme)
+function library.New(self, info, name, theme)
 
     theme = theme or {
         accent = c3rgb(255, 0, 0),
@@ -339,7 +339,7 @@ function library.New(self, info, theme)
         outline2 = c3rgb(45, 45, 45)
     }
 
-    local name = info.name or "worst ui library ever"
+    local name = name or "worst ui library ever"
     local size = typeof(info.size) == "Vector2" and info.size or v2new(500, 600)
 
     local window = {shit = {}, kbds = {}, rna = {}, sshit = nil, theme = theme, tabs = {}, _last = {0, 0}, start = v2zero, connections = {}, dragging = false}
